@@ -55,16 +55,33 @@ gifData.attr("data-state", "still");
 gifData.addClass("class", "gif");
 
 //pushes gifs to created div
-displayedGifDiv.prepend(gifDisplay);
+displayedGifDiv.append(gifDisplay);
 //pushes rating to created div
 displayedGifDiv.append(ratingDisplay);
-
-}
+//prepending displayedGifDiv to html page
+$("#giphy-output").prepend(displayedGifDiv);
+}//end of for loop
 
 });
 
 }//end of info display function
 
+
+/*---------------------CREATES BUTTONS-----------------------------------------------*/
+//loops throuh array and creates a button for items in array. 
+for (var i = 0; i < topics.length; i++) {
+    //create button
+    var createTopicButton = $("<button>");
+    //create button class
+    createTopicButton.addClass("topics-button");
+    //add data attribute
+    createTopicButton.attr("data-topic", topics[i]);
+    //writes text for each button depending on the topic.
+    createTopicButton.text(topics[i]);
+    //adding button to the HTML
+    $("#button-output").append(createTopicButton);
+    }
+/*-------------------END OF BUTTON CREATION----------------------------------------*/
 
 /*-------------------CHANGES STATE OF ANIMATION----------------------------------- */
 //when gif class is clicked the state of still or animated gif changes
@@ -81,25 +98,6 @@ if (state === "still") {
   }
  //END OF INFO DISPLAY FUNCTION
 /*-----------------END OF AJAX REQUEST-----------------------------------------------*/
-
-/*---------------------CREATES BUTTONS-----------------------------------------------*/
-//prevents buttons from duplicating
-//$("#giphy-output").empty();
-//loops throuh array and creates a button for items in array. 
-for (var i = 0; i < topics.length; i++) {
-    //create button
-    var createTopicButton = $("<button>");
-    //create button class
-    createTopicButton.addClass("topics-button");
-    //add data attribute
-    createTopicButton.attr("data-topic", topics[i]);
-    //writes text for each button depending on the topic.
-    createTopicButton.text(topics[i]);
-    //adding button to the HTML
-    $("#button-output").append(createTopicButton);
-    }
- 
-/*-------------------END OF BUTTON CREATION----------------------------------------*/
 
 /*-------------------PUTS AJAX CALL INTO BUTTON---------------------------------------*/
 $(document).on("click", ".topics-button", infoDisplay);
