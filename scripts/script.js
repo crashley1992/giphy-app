@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //Array that stores topics that will be pulled from Giphy
 var topics = ["batman", "jessica jones", "deadpool", "wonder woman", "captain marvel"];
 
@@ -27,8 +29,8 @@ var gifData = response.data;
 //tests for response data call
 console.log(gifData);
 
-//Removes previous gifs so they dont stay on the page. 
-$("#giphy-output").empty();
+ //Removes previous gifs so they dont stay on the page. 
+ $("#giphy-output").empty();
 
 //loop for gif display and attribute assinments
 for (var i = 0; i < gifData.length; i++) {
@@ -44,22 +46,23 @@ var gifDisplay = $("<img>");
 
 //Image is still until animation is initated
 gifDisplay.attr("src", gifData[i].images.fixed_height_still.url);
+console.log(gifData[i].images.fixed_height_still.url);
 //where paused gif is called from API
 gifDisplay.attr("data-still", gifData[i].images.fixed_height_still.url);
 //where moving gif is called from API
 gifDisplay.attr("data-animate", gifData[i].images.fixed_height.url);
 console.log(gifData[i].images.fixed_height.url)
 //data state at still
-gifData.attr("data-state", "still");
+gifDisplay.attr("data-state", "still");
 //makes gif class
-gifData.addClass("class", "gif");
+gifDisplay.addClass("gif");
 
-//pushes gifs to created div
-displayedGifDiv.append(gifDisplay);
-//pushes rating to created div
-displayedGifDiv.append(ratingDisplay);
-//prepending displayedGifDiv to html page
-$("#giphy-output").prepend(displayedGifDiv);
+// //pushes gifs to created div
+ displayedGifDiv.append(gifDisplay);
+// //pushes rating to created div
+ displayedGifDiv.append(ratingDisplay);
+// //prepending displayedGifDiv to html page
+ $("#giphy-output").prepend(displayedGifDiv);
 }//end of for loop
 
 });
@@ -103,3 +106,4 @@ if (state === "still") {
 $(document).on("click", ".topics-button", infoDisplay);
 
 $(document).on("click", ".gif", playGif);
+});
