@@ -1,49 +1,53 @@
 #header {
- text-align: center;
- color: white;
- background-color: #5bc0de;
+  text-align: center;
+  color: white;
+  background-color: #5bc0de;
 }
 
 #instructions {
-    text-align: center;
+  text-align: center;
 }
 
 /*Styling for Search bar*/
 #gif-form {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 3%;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 3%;
 }
+
 /*Styling for Search gif button*/
 #add-gif {
-    margin: 0 auto;
+  margin: 0 auto;
 }
+
 #gif-input {
-    border: solid black 2px;
+  border: solid black 2px;
 }
 
 /*Styling for gif topics, ones that generate gifs*/
 .btn-info {
-    margin-top: 3%;
-    margin-left: 2%;
-    display: inline-block;
+  margin-top: 3%;
+  margin-left: 2%;
+  display: inline-block;
 }
+
 /*container where gifs are output*/
 #giphy-output {
-    margin-top: 5%;
-    text-align: center;
+  margin-top: 5%;
+  text-align: center;
 }
+
 /*styling for ratings, p tags that are generated*/
 .gif-rating {
-    font-size: 25px;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 25px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*styling for gifs generated*/
 .gif {
-    border: solid black 2px;
-    margin-left:5%;
-    width: 250px;
+  border: solid black 2px;
+  margin-left: 5%;
+  width: 250px;
 }
