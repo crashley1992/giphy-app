@@ -15,10 +15,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
 </head>
 <body>
-<!--Where gifs will be displayed-->
-    <div id="button-output"></div>
+<h1 id="header">Gif Finder</h1>
+<!--text for how to use app-->
+<p id="instructions">Instructions: Click on a button and 10 gifs matching topic will generate. Must click on gif for them to aninmate.</p>
+<!--Form for custom input-->
+<form id="gif-form">
+    <div class = form-group>
+        <label for="gif-input">Gif Search</label>
+        <input type="text" id="gif-input"><br>
+    </div>
+        <!-- Button triggers new movie to be added -->
+        <input class="btn btn-secondary" id="add-gif" type="submit" value="Search Gif">
+      </form>
+  
 
+<!--Where buttons will be displayed-->
+    <div id="button-output"></div>
+<!--Where gifs are output-->
     <div id="giphy-output"></div>
+</div>
 
 <!--Jquery CDN-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
